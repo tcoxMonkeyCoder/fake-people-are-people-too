@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-//        count = savedInstanceState?.getInt(COUNT_KEY, 0) ?: 0
+        count = savedInstanceState?.getInt(COUNT_KEY, 0) ?: 0
         count_txt.text = count.toString()
 
         count_btn.setOnClickListener { _ ->
@@ -26,6 +26,7 @@ class MainActivity : AppCompatActivity() {
 
         go_to_person_generater.setOnClickListener {
             val intent = Intent(this, GeneratePersonActivity::class.java)
+
             startActivity(intent)
         }
 
@@ -57,8 +58,8 @@ class MainActivity : AppCompatActivity() {
         Log.i(lifecycle, "onDestroy")
     }
 
-//    override fun onSaveInstanceState(outState: Bundle) {
-//        super.onSaveInstanceState(outState)
-//        outState?.putInt(COUNT_KEY, count)
-//    }
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putInt(COUNT_KEY, count)
+    }
 }

@@ -8,9 +8,6 @@ import androidx.lifecycle.ViewModelProviders
 import kotlinx.android.synthetic.main.activity_generate_person.*
 
 class GeneratePersonActivity : AppCompatActivity() {
-    var count = 0
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_generate_person)
